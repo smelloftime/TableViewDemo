@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xdU-Xs-MjF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="STTestDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4H-iJ-3IQ">
+                                <rect key="frame" x="50" y="138" width="90" height="30"/>
+                                <state key="normal" title="xib创建的cell"/>
+                                <connections>
+                                    <action selector="xibBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9LA-am-rJh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pkz-Ga-9od">
+                                <rect key="frame" x="50" y="218" width="101" height="30"/>
+                                <state key="normal" title="代码创建的cell"/>
+                                <connections>
+                                    <action selector="codeBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2cl-r9-zlw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7T-i9-ykX">
+                                <rect key="frame" x="30" y="276" width="354" height="290.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">讨论问题：
+</string>
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="17" name=".PingFangSC-Regular"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">tableview中一次性只能显示n个cell
+理论上应该只初始化 n+1 个cell，然后table会复用这n+1个cell
+但实际上，table初始化了更多的cell
+</string>
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="17" name=".PingFangSC-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="⚠️">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="17" name="AppleColorEmoji"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">:xib创建的tableviewController 表现是和预期一致
+
+需求:
+记录被用户滚动cell到屏幕内的数据id
+但是现在情况：
+1、cell初始化之后就调用了willdisplay，导致该方法内获取到的内容并非用户实际滚动到屏幕内的内容
+</string>
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="17" name=".PingFangSC-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0D-FV-vU6">
+                                <rect key="frame" x="50" y="180" width="199" height="30"/>
+                                <state key="normal" title="xib创建的tableviewController"/>
+                                <connections>
+                                    <action selector="xibTableviewControllerBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fSj-YZ-Qj5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S7T-i9-ykX" secondAttribute="trailing" constant="30" id="3vw-Qa-q73"/>
+                            <constraint firstItem="I4H-iJ-3IQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="BnC-JF-0wV"/>
+                            <constraint firstItem="y0D-FV-vU6" firstAttribute="top" secondItem="I4H-iJ-3IQ" secondAttribute="bottom" constant="12" id="Cdo-hD-h84"/>
+                            <constraint firstItem="S7T-i9-ykX" firstAttribute="top" secondItem="Pkz-Ga-9od" secondAttribute="bottom" constant="28" id="GWq-eA-hhm"/>
+                            <constraint firstItem="I4H-iJ-3IQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="HQc-ln-IrW"/>
+                            <constraint firstItem="y0D-FV-vU6" firstAttribute="leading" secondItem="I4H-iJ-3IQ" secondAttribute="leading" id="Oyo-as-LLe"/>
+                            <constraint firstItem="Pkz-Ga-9od" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="WBj-f3-k74"/>
+                            <constraint firstItem="Pkz-Ga-9od" firstAttribute="top" secondItem="I4H-iJ-3IQ" secondAttribute="bottom" constant="50" id="Wrr-NA-EVm"/>
+                            <constraint firstItem="S7T-i9-ykX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="weB-IM-gHi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JaF-sA-Buu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="93.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fy0-10-hxf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xdU-Xs-MjF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZHF-NK-ZBz">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4tp-gM-ab8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qdG-Bj-arJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="93.75"/>
+        </scene>
+    </scenes>
+</document>
